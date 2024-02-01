@@ -1,0 +1,37 @@
+<!-- base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Flask Template{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/htmlmixed/htmlmixed.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/theme/darcula.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/htmlmixed/htmlmixed.js"></script>
+
+    <!-- Include Split.js from CDN -->
+<script src="https://unpkg.com/split.js"></script>
+
+</head>
+<body style="margin: 0; padding: 0; display: flex; height: 100vh; flex-direction: column;">
+
+    <!-- Navigation Bar -->
+    <nav style="background-color: #333; color: white; padding: 10px;">
+        <a href="{{ url_for('index') }}">Home</a> |
+        <a href="{{ url_for('problems') }}">Problems</a> |
+        <a href="{{ url_for('top') }}">Ranking</a> |
+        <a href="{{ url_for('about') }}">About us</a> 
+    </nav>
+
+    <!-- Content Block -->
+    <div style="flex: 1;">
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>
