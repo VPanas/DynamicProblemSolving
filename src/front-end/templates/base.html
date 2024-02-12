@@ -13,24 +13,40 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/theme/darcula.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/htmlmixed/htmlmixed.js"></script>
+<link rel="stylesheet" href='/static/main.css' />
 
     <!-- Include Split.js from CDN -->
 <script src="https://unpkg.com/split.js"></script>
 
 </head>
-<body style="margin: 0; padding: 0; display: flex; height: 100vh; flex-direction: column;">
+<body class="main-body">
 
-    <!-- Navigation Bar -->
-    <nav style="background-color: #333; color: white; padding: 10px;">
+    <header class="main-header">
+        <div class="main-user-logo">
+            <a href="{{ url_for('profile', username=user.username) }}"><img src="{{ user.photo_url }}" alt=""></a>
+        </div>
+        <nav>
+            <ul class="main-nav-links">
+                <li><a href="{{ url_for('index') }}"><img src="https://cdn.icon-icons.com/icons2/2389/PNG/512/hackerrank_logo_icon_145206.png" alt=""></a></li>
+                <li><a href="{{ url_for('problems') }}">Problems</a></li>
+                <li><a href="{{ url_for('top') }}">Ranking</a></li>
+                <li><a href="{{ url_for('about') }}">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Navigation Bar 
+    <nav class="main-nav">
         <a href="{{ url_for('index') }}">Home</a> |
         <a href="{{ url_for('problems') }}">Problems</a> |
         <a href="{{ url_for('top') }}">Ranking</a> |
         <a href="{{ url_for('about') }}">About us</a> 
     </nav>
-
+    -->
     <!-- Content Block -->
     <div style="flex: 1;">
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% endblock %}
     </div>
 
 </body>

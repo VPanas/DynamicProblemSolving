@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Index Page{% endblock %}
+
+{% block content %}
+<section>
+    <div class="user-photo-container">
+        <img src="{{ user.photo_url }}" alt="avatar" class="avatar">
+    </div>
+    <div class="user-info-container">
+        <p>{{ user.username }}</p>
+        <p>desde {{ user.register_date }}</p>
+    </div>
+</section>
+<section>
+    <div class = "user-streak-container">
+        {% for number in range(10) %}
+            <p>{{ number }}</p>
+        {% endfor %}
+    </div>
+</section>
+<section>
+    <div class=" user-exercices-container">
+        <table>
+            <th>Exercise</th>
+            <th>Time</th>
+            <th>Language</th>
+            <tr>The search</tr>
+            <tr>20 MINUTES</tr>
+            <tr>C++</tr>
+        </table>
+    </div>
+</section>
+
+
+
+{% endblock %}
