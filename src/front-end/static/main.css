@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+}
+
+body{
+    background-color: #fff59d;
+}
+
+.main-header{
+    background-color: #1b3039;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 85px;
+    padding: 5px 10%;
+}
+
+.main-header nav{
+    order: 1;
+}
+
+.main-user-logo{
+    cursor: pointer;
+    order: 3;
+    margin-left: auto;
+}
+
+.main-user-logo img{
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+    transition: all 0.3s;
+}
+
+.main-user-logo img:hover{
+    transform: scale(1.2);
+}
+
+.main-nav-links{
+    list-style: none;
+}
+
+.main-nav-links li:nth-child(1){
+    padding: 0 20px 0 0 ;
+}
+
+.main-nav-links li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.main-nav-links li a img{
+    border-radius: 50%;
+    height: 58px;
+    width: 58px;
+    transition: all 0.3s;
+}
+
+.main-nav-links li:hover{
+    transform: scale(1.1);
+}
+
+.main-nav-links a{
+    font-size: 700;
+    color: #eceff1;
+    text-decoration: none;
+}
+
+.main-nav-links li a:hover{
+    color: #ffbc0e;
+}
+
+.main-body{
+    margin: 0; padding: 0; display: flex; height: 100vh; flex-direction: column;
+}
+
+.main-nav{
+    background-color: #333; color: white; padding: 10px;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    
+}
+
+.user-photo-container{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.user-info-container{
+    text-align: center;
+    margin-top: 40px;
+    padding: 0.5px;
+}
+
+.user-streak-container{
+    text-align: center;
+    margin-top: 40px;
+    padding: 0.5px;
+    display: flex;
+}
+
+.user-streak-svg-container {
+    width: 1300px; 
+    height: 300px; 
+    margin: 5px; 
+    text-align: center;
+}
+.user-streak-rect-column {
+    width: 31px;
+    height: 200px;
+    margin: 5px;
+    padding: 5px;
+    fill: #ffbc0e; /* Use fill for SVG elements */
+}
+
+g {
+    width: 15px;
+    height: 15px;
+    fill: blue;
+    font-size: 14px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+text {
+    fill: #000;
+    font-size: 10px;
+    text-anchor: middle;
+}
+
+.rect-column {
+    width: 31px;
+    height: 200px;
+    margin: 5px;
+    padding: 5px;
+    fill: #ffbc0e;
+    stroke: #333;
+}
+
+/* ... (your CSS styles) ... */
+
+.rect-day {
+    width: 5px;
+    height: 20px;
+    fill: aquamarine;
+}
+
+/* ... (your remaining CSS styles) ... */

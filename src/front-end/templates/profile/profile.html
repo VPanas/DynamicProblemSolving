@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Index Page{% endblock %}
+
+{% block content %}
+<section>
+    <div class="user-photo-container">
+        <img src="{{ user.photo_url }}" alt="avatar" class="avatar">
+    </div>
+    <div class="user-info-container">
+        <p>{{ user.username }}</p>
+        <p>desde {{ user.register_date }}</p>
+    </div>
+</section>
+<section>
+    <div class="user-streak-container">
+        <h1>Exercises streak</h1>
+        <svg class="user-streak-svg-container" xmlns="http://www.w3.org/2000/svg">
+            {% for week in range(26) %}
+                <g transform="translate({{ 5 + week * 40 }}, 0)">
+                    <rect class="user-streak-rect-column" width="31" height="200" fill="#ffbc0e"></rect>
+                    {% for day in range(7) %}
+                        <rect class="rect-day" y="{{ day * 30 }}" width="31" height="31" fill="aquamarine"></rect>
+                        <text x="{{ 2.5 }}" y="{{ day * 30 + 15 }}">{{ day + 1 }}</text>
+                    {% endfor %}
+                </g>
+            {% endfor %}
+        </svg>
+        
+    </div>
+</section>
+
+<section>
+    <div class=" user-exercices-container">
+        <table>
+            <th>Exercise</th>
+            <th>Time</th>
+            <th>Language</th>
+            <tr>The search</tr>
+            <tr>20 MINUTES</tr>
+            <tr>C++</tr>
+        </table>
+    </div>
+</section>
+
+
+
+{% endblock %}
