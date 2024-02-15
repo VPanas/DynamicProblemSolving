@@ -1,5 +1,4 @@
 <!-- base.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,14 +9,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/htmlmixed/htmlmixed.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/theme/darcula.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/htmlmixed/htmlmixed.js"></script>
-<link rel="stylesheet" href='/static/main.css' />
-
-    <!-- Include Split.js from CDN -->
-<script src="https://unpkg.com/split.js"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/theme/darcula.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/htmlmixed/htmlmixed.js"></script>
+    <link rel="stylesheet" href='/static/main.css' />
+    <script src="https://unpkg.com/split.js"></script>
 </head>
 <body class="main-body">
 
@@ -34,16 +30,6 @@
             </ul>
         </nav>
     </header>
-
-    <!-- Navigation Bar 
-    <nav class="main-nav">
-        <a href="{{ url_for('index') }}">Home</a> |
-        <a href="{{ url_for('problems') }}">Problems</a> |
-        <a href="{{ url_for('top') }}">Ranking</a> |
-        <a href="{{ url_for('about') }}">About us</a> 
-    </nav>
-    -->
-    <!-- Content Block -->
     <div style="flex: 1; margin-left: 130px; margin-right: 130px;">
         {% block content %}
         {% endblock %}

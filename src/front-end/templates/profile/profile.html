@@ -16,12 +16,12 @@
     <div class="user-streak-container">
         <h1>Exercises streak</h1>
         <svg class="user-streak-svg-container" xmlns="http://www.w3.org/2000/svg">
-            {% for week in range(26) %}
-                <g transform="translate({{ 5 + week * 40 }}, 0)">
+            {% for week in weeks %}
+                <g transform="translate({{ 5 + loop.index0 * 40 }}, 0)">
                     <rect class="user-streak-rect-column" width="31" height="200" fill="#ffbc0e"></rect>
-                    {% for day in range(7) %}
-                        <rect class="rect-day" y="{{ day * 30 }}" width="31" height="31" fill="aquamarine"></rect>
-                        <text x="{{ 2.5 }}" y="{{ day * 30 + 15 }}">{{ day + 1 }}</text>
+                    {% for day in week %}
+                        <rect class="rect-day" y="{{ loop.index0  * 30 }}" width="31" height="31" fill="aquamarine"></rect>
+                        <text x="{{ 2.5 }}" y="{{ loop.index0  * 30 + 15 }}">{{ day }}</text>
                     {% endfor %}
                 </g>
             {% endfor %}

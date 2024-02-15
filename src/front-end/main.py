@@ -1,6 +1,7 @@
 from flask import Flask, abort, render_template
-import os
 from datetime import date
+import os
+import utils.get.getDates
 
 
 app = Flask(__name__, static_folder='static')
@@ -24,6 +25,10 @@ problems_data = [
             {'input': 'test_input_2', 'output': 'expected_output_2'},
         ]
     },
+]
+
+weeks = [
+    [1,2,3,4,5,6,7], [8,9,10,11,12,13,14], [15,16,17]
 ]
 
 users = [
@@ -82,15 +87,17 @@ def contact():
     #form and diff links to contact
     return render_template('info/contact.html', user=users[0])
 
-@app.route('/top')
+@app.route('/ranking')
 def top():
     #best results
-    return render_template('top/top.html', user=users[0])
+    return render_template('raking/ranking.html', user=users[0])
 
 @app.route('/profile/<username>')
 def profile(username):
-    #el perfil
-    return render_template('profile/profile.html', user=users[0])
+    print("holaaaa")
+    dates = utils.get.getDates.getDates()
+    print(dates)
+    return render_template('profile/profile.html', user=users[0], weeks=dates)
 
 if __name__ == '__main__':
     app.run(debug=True)
