@@ -1,7 +1,7 @@
 from flask import Flask, abort, render_template
 from datetime import date
 import os
-import utils.get.getDates
+from utils.get.getDates import getWeeks
 
 
 app = Flask(__name__, static_folder='static')
@@ -94,10 +94,8 @@ def top():
 
 @app.route('/profile/<username>')
 def profile(username):
-    print("holaaaa")
-    dates = utils.get.getDates.getDates()
-    print(dates)
-    return render_template('profile/profile.html', user=users[0], weeks=dates)
+    weeks = getWeeks()
+    return render_template('profile/profile.html', user=users[0], weeks=weeks)
 
 if __name__ == '__main__':
     app.run(debug=True)

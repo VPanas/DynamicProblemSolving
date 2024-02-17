@@ -17,11 +17,14 @@
         <h1>Exercises streak</h1>
         <svg class="user-streak-svg-container" xmlns="http://www.w3.org/2000/svg">
             {% for week in weeks %}
-                <g transform="translate({{ 5 + loop.index0 * 40 }}, 0)">
-                    <rect class="user-streak-rect-column" width="31" height="200" fill="#ffbc0e"></rect>
+                <g transform="translate({{ 5 + loop.index0 * 40 }}, 0)" fill="red">
+                    <text  x="{{ 0 }}" y="{{ 10 }}" >month</text>
+                    <rect class="user-streak-rect-column" width="31" height="200" fill="#ffbc0e">
+                        
+                    </rect>
                     {% for day in week %}
-                        <rect class="rect-day" y="{{ loop.index0  * 30 }}" width="31" height="31" fill="aquamarine"></rect>
-                        <text x="{{ 2.5 }}" y="{{ loop.index0  * 30 + 15 }}">{{ day }}</text>
+                        <rect class="rect-day" y="{{ loop.index0   * 30 }}" width="31" height="31" fill="aquamarine"></rect>
+                        <text x="{{ 2.5 }}" y="{{ loop.index0  * 30 + 15 }}">{{ day.day }}</text>
                     {% endfor %}
                 </g>
             {% endfor %}
